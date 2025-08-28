@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi App Premium</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #4f46e5;
+      color: white;
+      padding: 2rem;
+    }
+    main {
+      padding: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      margin: 1rem;
+      padding: 1rem 2rem;
+      background: #22c55e;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+    }
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #4f46e5;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hazte Premium</h1>
+    <p>Disfruta de la app sin anuncios y con funciones exclusivas</p>
+  </header>
+  <main>
+    <h2>Plan Premium</h2>
+    <p><strong>4,99€/mes</strong></p>
+
+    <!-- Botón de pago con Stripe -->
+    <a class="btn" href="https://buy.stripe.com/test_XXXXXXXX" target="_blank">Pagar con Stripe</a>
+
+    <!-- Botón de pago con PayPal -->
+    <a class="btn" href="https://www.paypal.com/ncp/payment/XXXXXXXX" target="_blank">Pagar con PayPal</a>
+  </main>
+
+  <footer>
+    <p>
+      <a href="terms.html">Términos de Servicio</a> | 
+      <a href="privacy.html">Política de Privacidad</a>
+    </p>
+  </footer>
+</body>
+</html>

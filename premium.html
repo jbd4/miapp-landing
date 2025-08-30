@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi App Premium</title>
+  <title>Planes Premium – House Bros</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
       background: #f4f4f9;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
     header {
       background: #4f46e5;
@@ -19,16 +19,64 @@
     }
     main {
       padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: left;
+      position: relative;
+    }
+    .card h2 {
+      margin-top: 0;
+      color: #4f46e5;
+    }
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0.5rem 0 1rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+      color: #444;
     }
     .btn {
       display: inline-block;
-      margin: 1rem;
-      padding: 1rem 2rem;
-      background: #22c55e;
+      margin-top: 0.5rem;
+      padding: 0.8rem 1.2rem;
       color: white;
       text-decoration: none;
       border-radius: 8px;
-      font-size: 1.2rem;
+      font-size: 1rem;
+      text-align: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .btn-stripe {
+      background: #22c55e;
+    }
+    .btn-paypal {
+      background: #0070ba;
+    }
+    .popular-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #0d6efd;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: bold;
     }
     footer {
       margin-top: 3rem;
@@ -44,24 +92,55 @@
 <body>
   <header>
     <h1>Hazte Premium</h1>
-    <p>Disfruta de la app sin anuncios y con funciones exclusivas</p>
+    <p>Elige el plan que mejor se adapte a ti</p>
   </header>
+
   <main>
-    <h2>Plan Premium</h2>
-    <p><strong>4,99€/mes</strong></p>
+    <!-- Plan Gratuito -->
+    <div class="card">
+      <h2>Gratuito</h2>
+      <p class="price">0€</p>
+      <ul>
+        <li>Funcionalidades limitadas</li>
+        <li>Publicidad incluida</li>
+        <li>Modo Explorer simple</li>
+        <li>Likes limitados</li>
+      </ul>
+      <p style="color:#666;font-size:0.9rem;">Incluido por defecto</p>
+    </div>
 
-    <!-- Botón de pago con Stripe -->
-    <a class="btn" href="https://buy.stripe.com/test_XXXXXXXX" target="_blank">Pagar con Stripe</a>
+    <!-- Plan Premium Light -->
+    <div class="card">
+      <h2>Premium Light</h2>
+      <p class="price">4,99€ / 3 meses</p>
+      <ul>
+        <li>Funcionalidades ampliadas</li>
+        <li>Sin anuncios</li>
+        <li>Likes ilimitados</li>
+        <li>Posición preferente de tu perfil</li>
+      </ul>
+      <a class="btn btn-stripe" href="https://buy.stripe.com/test_XXXXXXXX" target="_blank">Pagar con Stripe</a>
+      <a class="btn btn-paypal" href="https://www.paypal.com/ncp/payment/XXXXXXXX" target="_blank">Pagar con PayPal</a>
+    </div>
 
-    <!-- Botón de pago con PayPal -->
-    <a class="btn" href="https://www.paypal.com/ncp/payment/XXXXXXXX" target="_blank">Pagar con PayPal</a>
+    <!-- Plan Premium Pro -->
+    <div class="card">
+      <span class="popular-badge">Más popular</span>
+      <h2>Premium Pro</h2>
+      <p class="price">9,99€ / 3 meses</p>
+      <ul>
+        <li>Funcionalidades completas</li>
+        <li>Sin anuncios</li>
+        <li>Likes ilimitados</li>
+        <li>Mensajes directos</li>
+        <li>Servicio de matching completo</li>
+      </ul>
+      <a class="btn btn-stripe" href="https://buy.stripe.com/test_YYYYYYYY" target="_blank">Pagar con Stripe</a>
+      <a class="btn btn-paypal" href="https://www.paypal.com/ncp/payment/YYYYYYYY" target="_blank">Pagar con PayPal</a>
+    </div>
   </main>
 
   <footer>
-    <p>
-      <a href="terms.html">Términos de Servicio</a> | 
-      <a href="privacy.html">Política de Privacidad</a>
-    </p>
     <p><a href="index.html">Volver a la página principal</a></p>
   </footer>
 </body>

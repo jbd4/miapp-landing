@@ -119,7 +119,8 @@
         <li>Likes ilimitados</li>
         <li>Posición preferente de tu perfil</li>
       </ul>
-      <a class="btn btn-stripe" href="https://buy.stripe.com/test_XXXXXXXX" target="_blank">Pagar con Stripe</a>
+<!--       <a class="btn btn-stripe" href="https://buy.stripe.com/test_XXXXXXXX" target="_blank">Pagar con Stripe</a> -->
+      <a class="btn btn-stripe" href="#" onclick="checkout('light')">Pagar con Stripe</a>
       <a class="btn btn-paypal" href="https://www.paypal.com/ncp/payment/XXXXXXXX" target="_blank">Pagar con PayPal</a>
     </div>
 
@@ -135,7 +136,8 @@
         <li>Mensajes directos</li>
         <li>Servicio de matching completo</li>
       </ul>
-      <a class="btn btn-stripe" href="https://buy.stripe.com/test_YYYYYYYY" target="_blank">Pagar con Stripe</a>
+<!--       <a class="btn btn-stripe" href="https://buy.stripe.com/test_YYYYYYYY" target="_blank">Pagar con Stripe</a> -->
+      <a class="btn btn-stripe" href="#" onclick="checkout('pro')">Pagar con Stripe</a>
       <a class="btn btn-paypal" href="https://www.paypal.com/ncp/payment/YYYYYYYY" target="_blank">Pagar con PayPal</a>
     </div>
   </main>
@@ -144,4 +146,20 @@
     <p><a href="index.html">Volver a la página principal</a></p>
   </footer>
 </body>
+
+<script>
+async function checkout(plan) {
+  const res = await fetch("https://mi-backend.vercel.app/api/create-checkout-session", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ plan }),
+  });
+  const data = await res.json();
+  if (data.url) {
+    window.location.href = data.url;
+  } else {
+    alert("Error al iniciar el pago");
+  }
+}
+</script>
 </html>
